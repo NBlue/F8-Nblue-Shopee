@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp giả phần tử trong Css</title>
+
+    <style>
+        .box{
+            width: 100%;
+            height: 120px;
+            background: rgb(190, 124, 157);
+        }
+
+        .box::before{  /*Đứng đầu*/
+            content: "";
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: red;
+            
+        }
+        .box::after{ /*Luôn đứng cuối trong thẻ div gọi class box*/
+            content: "Nam";
+            display: block;
+            width: 50px;
+            height: 50px;
+            background:#999;
+            
+        }
+
+        h1::first-letter{       /*Css cho chữ cái đầu tiên của h1*/
+            font-size: 100px;
+        }
+
+        h1::selection{         /*Khi bôi chữ sẽ có màu hồng*/
+            background-color: violet;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h1>CSS pseudo-elements <br/>Dòng thứ 2</h1>
+    <ul>
+        <li>::before</li>
+        <li>::after</li>
+        <li>::first-letter</li>
+        <li>::first-line</li>
+        <li>::selection</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,168 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f5;
+
+}
+
+body > div {
+    margin: auto;
+  }
+
+/* Block */
+.btn{
+    display:inline-block;
+    text-decoration: none;
+    background-color: transparent; /*Trong suốt*/
+    border: none;
+    color: #fff;
+    padding: 12px 48px;
+    min-width: 50px;
+    border-radius:50px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;   /* Hiệu ứng chuyển đổi */
+    min-width: 150px;
+}
+
+.btn:hover{
+    opacity: 0.6;
+}
+
+.btn + .btn{   /* CSS cho các nút đứng cạnh nhau cách xa ra */
+    margin-left:24px;
+}
+
+.btn--success{
+    background-color: #71be34;
+}
+.btn--warn{
+    background-color: #ffb702;
+}
+.btn--danger{
+    background-color: #ff622d;
+}
+
+.btn--disable{   /*Nút bị vô hiệu hóa*/
+    opacity: 0.6 !important;
+    cursor: default;   /* Mặc định*/
+}
+
+.btn--size-l{
+    padding:16px 64px;
+}
+
+.btn--size-s{
+    padding: 8px 32px;
+}
+
+/* ============CSS Loast Message================ */
+#toast{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 99999; /* cho toast cao vào*/
+}
+
+.toast{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 0;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    border-radius:2px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+  /*  animation: slideInLeft ease 0.5s, fadeOut linear 1s 3s forwards;*/  /* 3s là độ delay: tức là sau 3s thì mới bắt đầu bị mờ; forward: là khi mờ biến mất rồi no hiện lại (ko tự động chạy lại from: opacity: 1)*/
+    transition: all linear 0.5s;
+}
+
+/* Viết chuyển động khi click button thì hiện dần từ phải sang */
+@keyframes slideInLeft{
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Viết chuyển động khi hiện 1 thời gian thì nó tự mờ đi và biến mất */
+@keyframes fadeOut{  /* Vì đang hiện (slideInLeft) rồi lên ko cần from nữa*/
+    to{
+        opacity: 0;
+    }
+}
+
+.toast__icon{
+    font-size: 24px;
+    padding: 0 16px;
+}
+
+.toast--success{
+    border-color: #47d764;
+}
+
+.toast--success .toast__icon{
+    color:#47d764;
+}
+
+.toast--infor{
+    border-color: #2f86eb;
+}
+
+.toast--infor .toast__icon{
+    color:#2f86eb;
+}
+
+.toast--waring{
+    border-color: #ffc021;
+}
+
+.toast--waring .toast__icon{
+    color:#ffc021;
+}
+
+.toast--error{
+    border-color: #cc4444;
+}
+
+.toast--error .toast__icon{
+    color:#cc4444;
+}
+
+.toast__body{
+    flex-grow: 1;
+}
+.toast__title{
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+.toast__msg{
+    font-size:16px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+.toast__close{
+    font-size: 20px;
+    padding: 0 16px;
+    color: #999;
+    cursor: pointer;
+}
+
+.toast__close:hover{
+    opacity: 0.7;
+}

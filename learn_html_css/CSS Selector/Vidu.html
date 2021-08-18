@@ -1,0 +1,43 @@
+<!-- <style>
+    p{
+        color: red;
+    }
+</style>
+<h1>Heading 1</h1>
+<p>Paragraph 1</p>
+<p>Paragraph 2</p> -->
+
+<!-- <style>
+    .paragraph1{
+        color: red;
+    }
+</style>
+<h1>Heading 1</h1>
+<p class="paragraph1">Paragraph 1</p>
+<p class="paragraph1">Paragraph 1</p>
+<p>Paragraph 2</p> -->
+
+<style>
+    .parent .children{
+        color: red;
+    }
+</style>
+
+<!-- Trường hợp .children là con trực tiếp của .parent -->
+<div class="parent">
+    <div class="children">Children 1</div>
+    <div class="children">Children 2</div>
+    <div class="children">Children 2</div>
+</div>
+
+<!-- Hoặc các .children nằm rải rác, miễn là con của .parent-->
+<div class="parent">
+    <div class="children">Children 1</div>
+
+    <div class="other-div">
+        <div class="children">Children 2</div>
+        <div class="other-div">
+            <div class="children">Children 3</div>
+        </div>
+    </div>
+</div>

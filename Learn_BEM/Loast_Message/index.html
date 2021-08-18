@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Loast Message</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- success -->
+    <div id="toast">
+        <!-- <div class="toast toast--success">
+            <div class="toast__icon">
+                <i class="fa fa-check-circle"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">Success</h3>
+                <p class="toast__msg">OK Bạn đã đăng kí thành công tài khoản F. Xin hãy liên hệ với chúng tôi</p>
+            </div>
+            <div class="toast__close">
+                <i class="fa fa-times" ></i>
+            </div>
+        </div> -->
+    </div>
+    <!-- button -->
+    <div>
+        <div onclick="showSuccessToast()" class="btn btn--success">Show success toast</div>
+        <div onclick="showErrorToast()" class="btn btn--danger">Show error toast</div>
+    </div>
+
+    <!-- Javascrip--Sẽ học sau -->
+    <script>
+        // toast funtion
+        function toast({
+            title = '', 
+            message = '', 
+            type = 'info', 
+            duration = 3000
+        })  { 
+            const main = document.getElementById('toast');
+            if(main){
+                const toast = document.createElement('div');
+
+                // Auto remove toast
+                const autoRemove = setTimeout(function() {
+                    main.removeChild(toast);      
+                }, duration + 1000)
+
+                // Remove toast when click
+                toast.onclick = function(e){
+                    if (e.target.closest('.toast__close')){
+                        main.removeChild(toast);
+                        clearTimeout(autoRemove);   //Khi click rồi thì xóa autoRemove đi để tránh lỗi
+                    }
+                }
+
+                const icons = {
+                    success: 'fa fa-check-circle',
+                    info: 'fa fa-info-circle', 
+                    waring: 'fa fa-exclamation', 
+                    error: 'fa fa-exclamation', 
+                };
+                const icon = icons[type]; 
+                const delay = (duration / 1000).toFixed(2); //Lấy ra 2 chữ số thập phân 
+
+                toast.classList.add('toast', `toast--${type}`);
+                toast.style.animation = `slideInLeft ease 0.5s, fadeOut linear 1s ${delay}s forwards`;
+                toast.innerHTML = `
+                    <div class="toast__icon">
+                        <i class="${icon}"></i>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">${title}</h3>
+                        <p class="toast__msg">${message}</p>
+                    </div>
+                    <div class="toast__close">
+                        <i class="fa fa-times" ></i>
+                    </div>
+                    `;
+                main.appendChild(toast)
+            
+            }
+            }
+
+            function showSuccessToast(){
+                toast({
+                    title: 'Success',
+                    message: 'Bạn đã đăng kí thành công tài khoản F. Xin hãy liên hệ với chúng tôi',
+                    type: 'success',
+                    duration: 5000  //Khoảng thời gian
+                })
+            }
+            function showErrorToast(){
+                toast({
+                    title: 'Error',
+                    message: 'Lỗi đăng kí!!',
+                    type: 'error',
+                    duration: 5000
+                })
+            }
+
+    </script>
+</body>
+</html>

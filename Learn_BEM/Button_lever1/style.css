@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f5;
+
+}
+
+body > div {
+    margin: auto;
+  }
+
+/* Block */
+.btn{
+    display:inline-block;
+    text-decoration: none;
+    background-color: transparent; /*Trong suốt*/
+    border: none;
+    color: #fff;
+    padding: 12px 48px;
+    min-width: 50px;
+    border-radius:50px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;   /* Hiệu ứng chuyển đổi */
+    min-width: 150px;
+}
+
+.btn:hover{
+    opacity: 0.6;
+}
+
+.btn + .btn{   /* CSS cho các nút đứng cạnh nhau cách xa ra */
+    margin-left:24px;
+}
+
+.btn--success{
+    background-color: #71be34;
+}
+.btn--warn{
+    background-color: #ffb702;
+}
+.btn--danger{
+    background-color: #ff622d;
+}
+
+.btn--disable{   /*Nút bị vô hiệu hóa*/
+    opacity: 0.6 !important;
+    cursor: default;   /* Mặc định*/
+}
+
+.btn--size-l{
+    padding:16px 64px;
+}
+
+.btn--size-s{
+    padding: 8px 32px;
+}

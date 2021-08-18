@@ -1,0 +1,77 @@
+/* PC */
+@media (min-width: 1024px){
+    
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .s-column-width{
+        width: 100%;
+    }
+
+    .s-column-bottom{
+        padding-bottom: 8px;
+    }
+
+    #header {
+        overflow: hidden;
+    }
+
+    #header .search-icon{
+        display: none;
+    }
+
+    #nav > li:first-child{
+        display: inline-block;
+    }
+
+    #nav,
+    #nav > li,
+    #header .menu-mobile{
+        display: block;
+    }
+
+    #nav .subnav {
+        position: relative;  /*relative để trả về mặc định, không cho cấp 2 nổi trên mặt phẳng khác nữa thì cái overflow: hidden của header sẽ bao hết cả cấp 2*/
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding-left: 41px;
+        line-height: 48px;
+    }
+
+    #nav li a {
+        /* text-decoration: none; */
+        line-height: 48px;
+        /* padding: 0px 24px;
+        display: block; */
+    }
+
+    /* Content-Mobile */
+
+    #content .member-item{
+        padding-top: 30px;
+        width: 100%;    /*Ko phải 33.33% để nó có thể tự đẩy xuống thoát khỏi float: left*/
+    }
+
+    #content .member-image{
+        width: 56%;
+    }
+
+    .contact-infor {
+        padding-bottom: 16px;
+    }
+
+    .button{
+        padding: 12px 28px;
+        line-height: 18px;
+    }
+    
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid, Row, Column</title>
+    <link rel="stylesheet" href="./grid.css">
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .course-item {
+            background-color: rgb(255, 102, 0);
+            line-height: 300px;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        .category {
+            margin-top: 0;
+            padding-left: 0;
+            background-color:#1e90ff;
+            height: 300px
+        }
+
+        @media (max-width: 1023px) {
+            .course-item {
+                margin-top: 8px;
+            }
+        }
+
+        /* Ví dụ 3: Offset */
+        /* * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            background-color: antiquewhite;
+            height: 1000px
+        }
+
+        .my-col {
+            background-color: rgb(255, 102, 0);
+            line-height: 300px;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="grid wide container">
+        <!-- Ví dụ 1: Column -->
+        <!-- <div class="row">
+            <div class="col l-3 m-4 c-6">
+                <div class="course-item">
+                    <h1>Course 1</h1>
+                </div>
+            </div>
+            <div class="col l-3 m-4 c-6">
+                <div class="course-item">
+                    <h1>Course 2</h1>
+                </div>
+            </div>
+            <div class="col l-3 m-4 c-6">
+                <div class="course-item">
+                    <h1>Course 3</h1>
+                </div>
+            </div>
+            <div class="col l-3 m-4 c-6">
+                <div class="course-item">
+                    <h1>Course 4</h1>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Ví dụ 2: Column and Gutter-->
+        <div class="row">
+            <div class="col l-3 m-0 c-0">
+                <div class="category">
+                    <ul>
+                        <li>Javascrip</li>
+                        <li>HTML, CSS</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col l-9 m-12 c-12">
+                <div class="row">
+                    <div class="col l-4 m-6 c-12">
+                        <div class="course-item">
+                            <h1>Course 1</h1>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-6 c-12">
+                        <div class="course-item">
+                            <h1>Course 2</h1>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-6 c-12">
+                        <div class="course-item">
+                            <h1>Course 3</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Ví dụ 3: Offset -->
+        <!-- <div class="row">
+            <div class="col l-6 m-6 c-6 l-o-3 m-o-2 c-o-5">
+                <div class="my-col">
+                    <h1>Column 1</h1>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</body>
+</html>

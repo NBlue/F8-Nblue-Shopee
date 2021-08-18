@@ -1,0 +1,13 @@
+*{
+    color: red;
+}
+li{
+    color:aquamarine !important;
+}
+:root{
+    --text-color: red;
+}
+h1{
+    color: var(--text-color);
+}
+

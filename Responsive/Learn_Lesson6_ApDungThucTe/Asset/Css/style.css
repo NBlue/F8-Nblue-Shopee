@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;;
+}
+
+.item {
+    background-color: orange;
+    color: #fff;
+    margin-top: 16px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 180px;
+    min-height: 180px;
+}
+
+.small-item {
+    background-color:aquamarine;
+}
+
+/* Layout 3: */
+.main{
+    display: flex;
+    margin: 0 32px;
+}
+
+.sidebar{
+    width: 300px;
+    background-color: #ccc;
+}
+
+.content{
+    /* width: calc(100% - 300px); */
+    /* flex-grow: 1; Nó sẽ bị lỗi */
+    flex: 1;
+    background-color:#888;
+}
+
+@media (max-width: 1023px) {
+    .hide-on-tablet-mobile {
+        display: none;
+    }
+}
